@@ -1,0 +1,31 @@
+import pyscreeze
+import win32gui
+import time
+
+#the value of pixel whose value is to be get
+x=448
+y=78
+a=626
+b=94
+
+linksobenX, linksobenY = win32gui.GetCursorPos()
+rechtsuntenX, rechtsUntenY = win32gui.GetCursorPos()
+print(linksobenX, linksobenY)
+print(rechtsuntenX, rechtsUntenY)
+#
+#rgb_values=screen.getpixel((x,y))
+#rgb_values2=screen.getpixel((a,b))
+#print(rgb_values)
+#print(rgb_values2)
+
+
+
+
+while True:
+    match = False
+    screen=pyscreeze.screenshot()
+    rgb_values = screen.getpixel((434,100))
+    if(str(rgb_values) == "(32, 44, 51)"):
+        match = True
+    if(match):
+        print("Match")
